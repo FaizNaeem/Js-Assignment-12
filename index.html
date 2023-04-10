@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const day = new Date().getDate();
+const suffixes = ["th", "st", "nd", "rd"];
+
+// const suffix = day % 100 >= 11 && day % 100 <= 13? "th": suffixes[day % 10] || "th";
+const suffix = suffixes[(day - 1) % 10 < 3 ? (day - 1) % 10 : 0];
+
+const formattedDate = `${day}${suffix} ${new Date().toLocaleString('default', { month: 'long' })}, ${new Date().getFullYear()}`;
+console.log(formattedDate);
+    </script>
+</body>
+</html>
